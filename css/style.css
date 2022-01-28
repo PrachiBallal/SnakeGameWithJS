@@ -1,0 +1,180 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.body{
+    background: url(../media/image/bg1.jpg);
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content:last baseline;
+    align-items: center;
+    max-width: auto;
+}
+
+#highscoreBox{
+    position: absolute;
+    top: 9px;
+    right: 200px;
+    font-size: 42px;
+    font-weight: bold;
+    color:rgb(250, 0, 0);
+    font-family: 'Creepster', cursive;
+     /* Create the gradient. */
+     background-image: linear-gradient(
+          90deg,
+          #690509 16.666%, 
+          #97061e 16.666%, 
+          #700258 33.333%, 
+          #69000e 33.333%, 
+          #b6b4b3 50%, 
+          #ff0000 50%, 
+          #da0000 66.666%, 
+          #fa47a1 66.666%, 
+          #e00909 83.333%, 
+          #b8000f 83.333%);
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+    /* Animate the text when loading the element. */
+      /* This animates it on page load and when hovering out. */
+      animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+  
+}
+
+
+#scoreBox {
+    /* Fallback: Set a background color. */
+    background-color: #ece7e7;
+    font-family: 'Creepster', cursive;
+    position: absolute;
+    top: 59px;
+    right: 200px;
+    font-size: 39px;
+    font-weight: bold;
+    /* Create the gradient. */
+     background-image: linear-gradient(
+          90deg,
+          #690509 16.666%, 
+          #97061e 16.666%, 
+          #700258 33.333%, 
+          #69000e 33.333%, 
+          #b6b4b3 50%, 
+          #ff0000 50%, 
+          #da0000 66.666%, 
+          #fa47a1 66.666%, 
+          #e00909 83.333%, 
+          #b8000f 83.333%);
+    
+    /* Set the background size and repeat properties. */
+    background-size: 100%;
+    background-repeat: repeat;
+  
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+    /* Animate the text when loading the element. */
+      /* This animates it on page load and when hovering out. */
+      animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+  
+  }
+  
+  #scoreBox:hover{
+      animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+  }
+  #highscoreBox:hover{
+      animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+  }
+  
+  
+  /* Move the background and make it smaller. */
+  /* Animation shown when entering the page and after the hover animation. */
+  @keyframes rainbow-text-simple-animation-rev {
+      0% {
+          background-size: 650%;
+      }
+      40% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 100%;
+      }
+  }
+  
+  /* Move the background and make it larger. */
+  /* Animation shown when hovering over the text. */
+  @keyframes rainbow-text-simple-animation {
+      0% {
+          background-size: 100%;
+      }
+      80% {
+          background-size: 650%;
+      }
+      100% {
+          background-size: 650%;
+      }
+  }
+    
+  
+  
+  /* Style the rest of the page. */
+  body {
+    background-color: #fdf1f0;
+  }
+  
+  header {
+    margin-top: 1em;
+    margin-top: calc(50vh - 3em);
+  }
+  
+  h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
+    font-size: 6em;
+    text-align: center;
+    margin-bottom: 0;
+    margin-bottom: -0.25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    width: 605px;
+  }
+
+#board{
+    background: linear-gradient(rgb(5, 0, 0),rgba(134, 2, 42, 0.5));
+    width: 90vmin;
+    height: 92vmin;
+    border: 1px solid rgb(177, 0, 59);
+    display:grid;
+    grid-template-rows: repeat(15,1fr);
+    grid-template-columns: repeat(15,1fr);
+}
+
+.head{
+    background:linear-gradient(rgb(255, 65, 144),rgba(117, 7, 90, 0.589));
+    /* border: .5vmin solid rgb(5, 4, 4); */
+    border-radius: 24px;
+    transform: scale(1.05);
+}
+.food{
+    background:linear-gradient(yellow,rgba(223, 129, 52, 0.589));
+    border: .35vmin solid rgb(255, 166, 0);
+    border-radius: 5px;
+}
+.snake{
+    background:linear-gradient(rgb(165, 164, 165),rgb(24, 22, 26));
+    border: .25vmin solid black;
+    border-radius: 24px;
+}
