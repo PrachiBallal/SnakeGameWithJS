@@ -1,4 +1,5 @@
 //Game constants & variables
+let gridSize = 38;
 let inputDir={x:0, y:0};
 let foodSound = new Audio("../media/music/food.mp3");
 let gameOverSound = new Audio('../media/music/gameover.mp3');
@@ -29,7 +30,7 @@ function isCollide(snake) {
         }
     }
     // If you bump into the wall
-    if(snake[0].x >= 18 || snake[0].x <=0 || snake[0].y >= 18 || snake[0].y <=0){
+    if(snake[0].x >= gridSize || snake[0].x <=0 || snake[0].y >= gridSize || snake[0].y <=0){
         return true;
     }
         
@@ -37,14 +38,22 @@ function isCollide(snake) {
 }
 
 function gameEngine(){
+    //  musicSound.play();
     //Part1 : Updating the Snake array and Food
     if(isCollide(snakeArr)){
         gameOverSound.play();
-        musicSound.play();
+       
         inputDir = {x:0,y:0};
-        alert("Game Over, Press any key to play again!");
+        if (confirm("Game Over, Press any key to play again!")){
+            musicSound.pause();
+            score=0;
+            scoreBox.innerHTML = "Score: " + score;
+        }
+        else{
+            musicSound.play();
+        }
         snakeArr = [{x:13,y:10}];
-        musicSound.play();
+        // musicSound.play();
         score = 0;
     }
 
@@ -59,7 +68,7 @@ function gameEngine(){
         }
         scoreBox.innerHTML = "Score: " + score;
         snakeArr.unshift({x: snakeArr[0].x + inputDir.x , y: snakeArr[0].y + inputDir.y})
-        let a =6, b=14;
+        let a =10, b=gridSize-10;
         food = {x: Math.round(a+(b-a)* Math.random()),y: Math.round(a+(b-a)* Math.random())}
     }
     //Moving Snake
@@ -108,12 +117,13 @@ window.requestAnimationFrame(main);
 window.addEventListener('keydown',e=>{
     inputDir = {x:0, y:1} //starts the game
     moveSound.play();   //sound plays 
-    // musicSound.play();   //sound plays 
+    musicSound.play();   //sound plays 
     switch (e.key) {
         case "ArrowUp":
-            inputDir.x= 0;
-            inputDir.y= -1;
+                inputDir.x= 0;
+                inputDir.y= -1;
             break;
+            
         case "ArrowDown":
             inputDir.x= 0;
             inputDir.y= 1;
