@@ -20,20 +20,20 @@
     right: 200px;
     font-size: 42px;
     font-weight: bold;
-    color:rgb(250, 0, 0);
+    color:rgb(240, 16, 221);
     font-family: 'Creepster', cursive;
      /* Create the gradient. */
      background-image: linear-gradient(
           90deg,
-          #690509 16.666%, 
-          #97061e 16.666%, 
+          #fc0ab3b2 16.666%, 
+          #e09aa6 16.666%, 
           #700258 33.333%, 
           #69000e 33.333%, 
           #b6b4b3 50%, 
           #ff0000 50%, 
           #da0000 66.666%, 
           #fa47a1 66.666%, 
-          #e00909 83.333%, 
+          #5e3f3f 83.333%, 
           #b8000f 83.333%);
     
     /* Set the background size and repeat properties. */
@@ -54,7 +54,7 @@
 
 #scoreBox {
     /* Fallback: Set a background color. */
-    background-color: #ece7e7;
+    background-color: #a21bbdfa;
     font-family: 'Creepster', cursive;
     position: absolute;
     top: 59px;
@@ -64,7 +64,7 @@
     /* Create the gradient. */
      background-image: linear-gradient(
           90deg,
-          #690509 16.666%, 
+          hsla(310, 54%, 55%, 0.568) 16.666%, 
           #97061e 16.666%, 
           #700258 33.333%, 
           #69000e 33.333%, 
@@ -72,8 +72,8 @@
           #ff0000 50%, 
           #da0000 66.666%, 
           #fa47a1 66.666%, 
-          #e00909 83.333%, 
-          #b8000f 83.333%);
+          #a32424 83.333%, 
+          #d3c6c7 83.333%);
     
     /* Set the background size and repeat properties. */
     background-size: 100%;
@@ -158,8 +158,8 @@
     height: 92vmin;
     border: 1px solid rgb(177, 0, 59);
     display:grid;
-    grid-template-rows: repeat(38,1fr);
-    grid-template-columns: repeat(38,1fr);
+    grid-template-rows: repeat(18,1fr);
+    grid-template-columns: repeat(18,1fr);
 }
 
 .head{
@@ -177,4 +177,29 @@
     background:linear-gradient(rgb(165, 164, 165),rgb(24, 22, 26));
     border: .25vmin solid black;
     border-radius: 24px;
+}
+.swal-footer{
+    
+    margin-top: 32px;
+    margin-bottom: 32px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.swal-button{
+    color: rgb(196, 158, 158);
+    background: linear-gradient(rgba(235, 0, 0, 0.5), rgba(0, 0, 0, 0.384));
+    font-family: 'Creepster', cursive; 
+    font-size: x-large;
+}
+.swal-title {
+        
+        font-family: 'Creepster', cursive;  
+        text-align: center;
+        color: #eeebeb;
+        font-size:50px;
+      }
+.swal-modal {
+background: linear-gradient(rgba(235, 0, 0, 0.5), rgba(0, 0, 0, 0.384));
+border: 2px solid rgba(5, 0, 0, 0.534);
 }

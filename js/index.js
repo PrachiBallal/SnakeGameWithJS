@@ -1,5 +1,5 @@
 //Game constants & variables
-let gridSize = 38;
+let gridSize = 18;
 let inputDir={x:0, y:0};
 let foodSound = new Audio("../media/music/food.mp3");
 let gameOverSound = new Audio('../media/music/gameover.mp3');
@@ -38,23 +38,22 @@ function isCollide(snake) {
 }
 
 function gameEngine(){
-    //  musicSound.play();
     //Part1 : Updating the Snake array and Food
     if(isCollide(snakeArr)){
         gameOverSound.play();
-       
+        musicSound.pause();
         inputDir = {x:0,y:0};
-        if (confirm("Game Over, Press any key to play again!")){
-            musicSound.pause();
-            score=0;
-            scoreBox.innerHTML = "Score: " + score;
-        }
-        else{
-            musicSound.play();
-        }
-        snakeArr = [{x:13,y:10}];
-        // musicSound.play();
-        score = 0;
+        swal({
+            title: "GAME OVER!!!",
+            // text: "Do you want to play again?",
+            buttons: "Play Again",
+          })
+          .then((value) => {
+                score=0;
+                scoreBox.innerHTML = "Score: " + score;
+          });
+          
+        snakeArr = [{x:13,y:10}];        
     }
 
     //If you have eaten the food, increment the score and regenerate the food
